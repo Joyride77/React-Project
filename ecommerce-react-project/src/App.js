@@ -1,14 +1,30 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import styles from "./style";
 
-import { Navbar, Hero, Footer } from "./components";
+import { SignIn, Navbar, Hero, Footer } from "./components";
 
 function App() {
   return (
-    <div className="bg-primary overflow-hidden w-full">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Navbar />
+    <div className="overflow-hidden w-full">
+      <div className="bg-primary">
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <SignIn />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-primary">
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <SignIn />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-primary">
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>{/* <Navbar /> */}</div>
         </div>
       </div>
 
