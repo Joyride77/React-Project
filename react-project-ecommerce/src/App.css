@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --orange: #eda415;
+  --grey: #f4f4f4;
+  --blue: #003f62;
+  --textBlue: #1b5a7d;
+  --light: #fff;
+  --black: #3a3a3a;
+  --ocean: #2e8fc5;
+  --lightBlue: #e2f4ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#sign-in {
+  background-color: var(--blue);
+  color: var(--light);
+}
+
+#search-hero button {
+  background-color: var(--orange);
+  border: none;
+  color: var(--light);
+}
+
+#search-hero .input-group {
+  height: 50px;
+}
+
+#search-hero .input-group input {
+  border-radius: 20px 0px 0px 20px;
+}
+#search-hero .input-group input::placeholder {
+  padding-left: 20px;
+}
+
+#search-hero .input-group button {
+  width: 100px;
+  border-radius: 0 20px 20px 0;
+}
+
+#nav-bar {
+  background-color: var(--grey);
+}
+
+#catagories {
+  background-color: var(--orange);
+}
+
+#catagories a {
+  color: var(--light);
+}
+
+#catagories .dropdown-item {
+  color: var(--black);
+}
+
+#catagories a::after {
+  border: solid var(--light);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 20px;
+}
+
+.free-return {
+  color: var(--textBlue);
+}
+
+#sub-menu a {
+  color: var(--black);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+#sub-menu a::after {
+  border: solid var(--black);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin: 6px 0px 10px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#ads-section {
+  background: url(./images/hero/ads.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 417px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#ads-section button {
+  width: 130px;
+  background-color: var(--orange);
+  border: none;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  padding: 15px 25px;
+  font-weight: 500;
+}
+
+#ads-section .col {
+  height: 417px;
+}
+
+#ads-section h1 {
+  color: var(--ocean);
+  font-weight: 700;
+  line-height: 62px;
+}
+
+#advantage {
+  background-color: var(--lightBlue);
+  height: 160px;
+  border-radius: 20px;
+}
+
+#advantage p,
+#advantage h5 {
+  margin-bottom: 0;
+  color: var(--blue);
+}
+
+#sponsor {
+  background-color: var(--lightBlue);
+  height: 140px;
+  border-radius: 20px;
+}
+
+#sponsor img {
+  width: 180px;
+  margin: 0 15px;
 }
