@@ -5,6 +5,7 @@ import {
   SignIn,
   MainMenu,
   Hero,
+  HeroSlider,
   Ads,
   Advantage,
   Sponsor,
@@ -28,6 +29,16 @@ function App() {
         <div className="container">
           <MainMenu />
         </div>
+      </div>
+
+      <div id="hero" className="container-fluid px-0 mb-5">
+        <div className="container">
+          <Hero />
+        </div>
+      </div>
+
+      <div id="hero-slider" className="container">
+        <HeroSlider />
       </div>
 
       <div id="ads-section" className="container">

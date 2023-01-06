@@ -91,6 +91,86 @@ p {
   margin: 6px 0px 10px 10px;
 }
 
+#hero {
+  position: relative;
+}
+
+#hero .alice-carousel__dots {
+  position: absolute;
+  bottom: 5rem;
+  left: 11.5rem;
+}
+
+#hero .alice-carousel__dots .__active {
+  background-color: var(--orange);
+  border-color: transparent;
+}
+
+#hero .alice-carousel__dots li {
+  background-color: transparent;
+  border: 0.5px solid var(--textBlue);
+  width: 13px;
+  height: 13px;
+}
+
+#hero .row {
+  height: 400px;
+}
+
+#hero .shop-btn {
+  background-color: var(--orange);
+  border-color: transparent;
+}
+#hero .view-btn {
+  background-color: transparent;
+  color: var(--textBlue);
+  border-color: var(--blue);
+}
+
+#hero .shop-btn,
+#hero .view-btn {
+  width: 130px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  padding: 15px 25px;
+  font-weight: 500;
+}
+
+#hero .hero-content {
+  padding-left: 100px;
+  margin-top: 100px;
+}
+
+#hero .hero-image-content {
+  position: relative;
+}
+#hero .hero-image-content img {
+  position: absolute;
+}
+#hero .hero-image-content button {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  background-color: var(--orange);
+  border-color: transparent;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+#hero-slider .slider-item {
+  height: 150px;
+  border: 0.1px solid var(--black);
+  border-radius: 20px;
+  width: 330px;
+}
+
+#hero-slider img {
+  width: 100px;
+}
+
 #ads-section {
   background: url(./images/hero/ads.svg);
   background-repeat: no-repeat;
@@ -105,7 +185,7 @@ p {
 #ads-section button {
   width: 130px;
   background-color: var(--orange);
-  border: none;
+  border-color: transparent;
   border-radius: 20px;
   font-size: 0.875rem;
   padding: 15px 25px;
@@ -143,4 +223,14 @@ p {
 #sponsor img {
   width: 180px;
   margin: 0 15px;
+}
+
+#hero .hero-img {
+  width: 400px;
+  object-fit: contain;
+}
+
+#hero h1 {
+  color: var(--textBlue);
+  font-weight: 700;
 }

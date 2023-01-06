@@ -3,6 +3,13 @@ import electronictech from "../images/sponsor-logo/electronictech.svg";
 import scapingtech from "../images/sponsor-logo/scapingtech.svg";
 import spacing from "../images/sponsor-logo/spacing.svg";
 import tech from "../images/sponsor-logo/tech.svg";
+import camerahero from "../images/hero/camerahero.svg";
+import speakerBig from "../images/hero/speakerBig.svg";
+import headphone from "../images/popular-products/headphone.svg";
+import tableSpeaker from "../images/latest-news/tableSpeaker.svg";
+import speakerSmall from "../images/hero/speakerSmall.svg";
+import laptopSmall from "../images/hero/laptopSmall.svg";
+import cameraSmall from "../images/hero/cameraSmall.svg";
 
 export const menus = [
   {
@@ -85,6 +92,66 @@ export const catagories = [
         position: 3,
       },
     ],
+  },
+];
+
+export const heroInfo = [
+  {
+    id: "camera",
+    img: camerahero,
+    price: "only $89",
+    title: "Canon camera",
+  },
+  {
+    id: "big speaker",
+    img: speakerBig,
+    price: "only $999",
+    title: "JBL speaker",
+  },
+  {
+    id: "wireless headphone",
+    img: tableSpeaker,
+    price: "only $1",
+    title: "Wireless Headphone",
+  },
+];
+
+export const heroslider = [
+  {
+    id: "speaker",
+    img: speakerSmall,
+    title: "Speaker",
+    quantity: "(6 items)",
+  },
+  {
+    id: "camera",
+    img: cameraSmall,
+    title: "DSLR camera",
+    quantity: "(6 items)",
+  },
+  {
+    id: "laptop",
+    img: laptopSmall,
+    title: "Desktop & laptop",
+    quantity: "(6 items)",
+  },
+  {
+    id: "speaker",
+    img: speakerSmall,
+    title: "Speaker",
+    quantity: "(6 items)",
+  },
+  {
+    id: "camera",
+    img: cameraSmall,
+    title: "DSLR camera",
+    quantity: "(6 items)",
+  },
+  {
+    id: "laptop",
+    img: laptopSmall,
+    title: "Desktop & laptop",
+    quantity: "(6 items)",
   },
 ];
 
