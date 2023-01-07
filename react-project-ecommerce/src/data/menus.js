@@ -177,3 +177,18 @@ export const sponsors = [
     img: tech,
   },
 ];
+
+export const peoples = [
+  {
+    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    name: "Savannah Nguyen",
+  },
+  {
+    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    name: "Esther Howard",
+  },
+  {
+    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    name: "Esther Howard",
+  },
+];
