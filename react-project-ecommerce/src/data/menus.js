@@ -5,11 +5,15 @@ import spacing from "../images/sponsor-logo/spacing.svg";
 import tech from "../images/sponsor-logo/tech.svg";
 import camerahero from "../images/hero/camerahero.svg";
 import speakerBig from "../images/hero/speakerBig.svg";
-import headphone from "../images/popular-products/headphone.svg";
 import tableSpeaker from "../images/latest-news/tableSpeaker.svg";
 import speakerSmall from "../images/hero/speakerSmall.svg";
 import laptopSmall from "../images/hero/laptopSmall.svg";
 import cameraSmall from "../images/hero/cameraSmall.svg";
+import cameraFront from "../images/popular-products/cameraFront.svg";
+import controller from "../images/popular-products/controller.svg";
+import headphone from "../images/popular-products/headphone.svg";
+import laptop from "../images/popular-products/laptop.svg";
+import shop from "../images/logo/shop.svg";
 
 export const menus = [
   {
@@ -152,6 +156,165 @@ export const heroslider = [
     img: laptopSmall,
     title: "Desktop & laptop",
     quantity: "(6 items)",
+  },
+];
+
+export const popularData = [
+  {
+    page: [
+      {
+        id: "Camera",
+        img: cameraFront,
+        price: "$560.50",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+    ],
+  },
+  {
+    page: [
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+      {
+        id: "Camera",
+        img: cameraFront,
+        price: "$560.50",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+    ],
+  },
+  {
+    page: [
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Play game",
+        img: controller,
+        price: "$60",
+        shop: shop,
+      },
+      {
+        id: "Tablet as a laptop",
+        img: laptop,
+        price: "$999.90",
+        shop: shop,
+      },
+      {
+        id: "Camera",
+        img: cameraFront,
+        price: "$560.50",
+        shop: shop,
+      },
+      {
+        id: "Wireless headphones",
+        img: headphone,
+        price: "$230.10",
+        shop: shop,
+      },
+    ],
   },
 ];
 
