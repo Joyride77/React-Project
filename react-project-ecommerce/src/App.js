@@ -6,6 +6,7 @@ import {
   MainMenu,
   Hero,
   HeroSlider,
+  PopularProduct,
   Ads,
   Advantage,
   Sponsor,
@@ -39,6 +40,10 @@ function App() {
 
       <div id="hero-slider" className="container">
         <HeroSlider />
+      </div>
+
+      <div id="popular-product" className="container">
+        <PopularProduct />
       </div>
 
       <div id="ads-section" className="container">

@@ -11,7 +11,7 @@ const HeroSlider = () => {
                         <div className="col">
                             <img src={data.img} alt={data.id} />
                         </div>
-                        <div className="col">
+                        <div className="col slider-content">
                             <div>
                                 <h5>{data.title}</h5>
                                 <p>{data.quantity}</p>

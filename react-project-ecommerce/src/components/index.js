@@ -7,6 +7,7 @@ import Ads from "./Ads";
 import Advantage from "./Advantage";
 import Sponsor from "./Sponsor";
 import HeroSlider from "./HeroSlider";
+import PopularProduct from "./PopularProduct";
 
 export {
   Contact,
@@ -14,6 +15,7 @@ export {
   MainMenu,
   Hero,
   HeroSlider,
+  PopularProduct,
   Ads,
   Advantage,
   Sponsor,
