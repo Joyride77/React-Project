@@ -63,6 +63,12 @@ function App() {
       >
         <Sponsor />
       </div>
+
+      <div id="sign-in" className="container-fluid px-0">
+        <div className="container">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
