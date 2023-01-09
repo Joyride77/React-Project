@@ -214,29 +214,27 @@ p {
   width: 130px;
 }
 
-#popular-product .alice-carousel__stage-item {
-}
-
-#popular-product .row {
-  width: 300px;
-  height: 300px;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* background-color: red; */
+#popular-product .border {
+  width: 230px;
+  height: 350px;
   border: 0.1px solid var(--greyborder);
   border-radius: 20px;
+  justify-content: center;
 }
 
-#popular-product .col {
-  /* text-align: center; */
+#popular-product #card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #popular-product img {
-  width: 200px;
-  height: 180px;
+  width: 100%;
+}
+
+#popular-product .shoppy {
+  width: 35px;
 }
 
 #popular-product h6 {
