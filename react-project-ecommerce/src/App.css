@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 :root {
@@ -11,7 +14,7 @@
   --black: #3a3a3a;
   --ocean: #2e8fc5;
   --lightBlue: #e2f4ff;
-  --greyborder: #acacac;
+  --greyborder: #d9d9d9;
 }
 
 p {
@@ -98,18 +101,24 @@ p {
 
 #hero .alice-carousel__dots {
   position: absolute;
-  bottom: 5rem;
+  bottom: 3rem;
   left: 11.5rem;
 }
 
-#hero .alice-carousel__dots .__active {
+#hero .alice-carousel__dots .__active,
+#popular-product .alice-carousel__dots .__active,
+#members .alice-carousel__dots .__active,
+#latest-news .alice-carousel__dots .__active {
   background-color: var(--orange);
   border-color: transparent;
 }
 
-#hero .alice-carousel__dots li {
+#hero .alice-carousel__dots li,
+#popular-product .alice-carousel__dots li,
+#members .alice-carousel__dots li,
+#latest-news .alice-carousel__dots li {
   background-color: transparent;
-  border: 0.5px solid var(--textBlue);
+  border: 0.1px solid var(--greyborder);
   width: 13px;
   height: 13px;
 }
@@ -199,11 +208,11 @@ p {
   transition: 2s;
 }
 
-#hero-slider .slider-item {
+#hero-slider .hero-slider {
   height: 140px;
   border: 0.1px solid var(--greyborder);
   border-radius: 20px;
-  width: 330px;
+  width: 90%;
 }
 
 #hero-slider img {
@@ -214,23 +223,32 @@ p {
   width: 130px;
 }
 
-#popular-product .border {
-  width: 230px;
-  height: 350px;
+#popular-product .popular-product {
+  width: calc((100% / 4) - 20px);
+  height: 270px;
   border: 0.1px solid var(--greyborder);
   border-radius: 20px;
   justify-content: center;
 }
 
-#popular-product #card {
+#popular-product #card,
+#members #card,
+#latest-news #card,
+#hero-slider #card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 50px;
   align-items: center;
 }
 
+#popular-product .product-image {
+  height: 160px;
+}
+
 #popular-product img {
-  width: 100%;
+  width: 190px;
+  height: 120px;
 }
 
 #popular-product .shoppy {
@@ -272,6 +290,48 @@ p {
   line-height: 62px;
 }
 
+#recommended-items .recommended-items {
+  height: 450px;
+}
+
+#recommended-items .big-content {
+  border: 0.1px solid var(--greyborder);
+  border-radius: 20px;
+}
+
+#recommended-items .big-content img {
+  width: 425px;
+}
+
+#recommended-items .small-content {
+  border: 0.1px solid var(--greyborder);
+  border-radius: 20px;
+  height: 200px;
+}
+
+#recommended-items h5 {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+#members .members {
+  border: 0.1px solid var(--greyborder);
+  border-radius: 20px;
+  width: calc((100% / 3) - 20px);
+  height: 240px;
+}
+
+#members p {
+  background-color: var(--lightBlue);
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+#members h6,
+#latest-news h6 {
+  color: var(--blue);
+}
+
 #advantage {
   background-color: var(--lightBlue);
   height: 160px;
@@ -303,4 +363,20 @@ p {
 #hero h1 {
   color: var(--textBlue);
   font-weight: 700;
+}
+
+#latest-news .latest-news {
+  border: 0.1px solid var(--greyborder);
+  border-radius: 20px;
+  width: calc((100% / 2) - 20px);
+  height: 300px;
+}
+
+#latest-news img {
+  width: 300px;
+}
+
+#latest-news p,
+#members p {
+  font-size: 0.8rem;
 }
