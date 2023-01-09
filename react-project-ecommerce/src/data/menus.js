@@ -14,6 +14,10 @@ import controller from "../images/popular-products/controller.svg";
 import headphone from "../images/popular-products/headphone.svg";
 import laptop from "../images/popular-products/laptop.svg";
 import shop from "../images/logo/shop.svg";
+import personOne from "../images/person/personOne.svg";
+import personTwo from "../images/person/personTwo.svg";
+import personThree from "../images/person/personThree.svg";
+import headphonesBig from "../images/latest-news/headphonesBig.svg";
 
 export const menus = [
   {
@@ -318,6 +322,24 @@ export const popularData = [
   },
 ];
 
+export const recommendeditems = [
+  {
+    id: "JBL bar 2.1 deep bass",
+    price: "$11,70",
+    img: speakerBig,
+  },
+  {
+    id: "Contoller",
+    price: "$11,70",
+    img: controller,
+  },
+  {
+    id: "Laptop",
+    price: "$11,70",
+    img: laptop,
+  },
+];
+
 export const sponsors = [
   {
     id: "sponsor-1",
@@ -341,17 +363,101 @@ export const sponsors = [
   },
 ];
 
-export const peoples = [
+export const members = [
   {
-    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-    name: "Savannah Nguyen",
+    page: [
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Savannah Nguyen",
+        img: personOne,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Esther Howard",
+        img: personTwo,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Smith Geith",
+        img: personThree,
+      },
+    ],
   },
   {
-    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-    name: "Esther Howard",
+    page: [
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Smith Geith",
+        img: personThree,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Savannah Nguyen",
+        img: personOne,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Esther Howard",
+        img: personTwo,
+      },
+    ],
   },
   {
-    data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
-    name: "Esther Howard",
+    page: [
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Esther Howard",
+        img: personTwo,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Smith Geith",
+        img: personThree,
+      },
+      {
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        name: "Savannah Nguyen",
+        img: personOne,
+      },
+    ],
+  },
+];
+
+export const latestnews = [
+  {
+    page: [
+      {
+        img: headphonesBig,
+        date: "22 oct 2021",
+        title: "Who avoids a pain that produces?",
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        by: "By spacing tech",
+      },
+      {
+        img: tableSpeaker,
+        date: "22 oct 2021",
+        title: "Who avoids a pain that produces?",
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        by: "By spacing tech",
+      },
+    ],
+  },
+  {
+    page: [
+      {
+        img: tableSpeaker,
+        date: "22 oct 2021",
+        title: "Who avoids a pain that produces?",
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        by: "By spacing tech",
+      },
+      {
+        img: headphonesBig,
+        date: "22 oct 2021",
+        title: "Who avoids a pain that produces?",
+        data: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper.",
+        by: "By spacing tech",
+      },
+    ],
   },
 ];
