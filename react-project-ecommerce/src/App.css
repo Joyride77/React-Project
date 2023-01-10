@@ -243,7 +243,7 @@ p {
 }
 
 #popular-product .product-image {
-  height: 160px;
+  height: 120px;
 }
 
 #popular-product img {
@@ -253,10 +253,12 @@ p {
 
 #popular-product .shoppy {
   width: 35px;
+  height: 35px;
 }
 
 #popular-product h6 {
   color: var(--blue);
+  height: 50px;
 }
 
 #ads-section {
@@ -379,4 +381,55 @@ p {
 #latest-news p,
 #members p {
   font-size: 0.8rem;
+}
+
+#footer {
+  background-color: var(--lightBlue);
+  padding: 30px 0;
+}
+
+#footer .subscribe-section {
+  background-color: white;
+  border-radius: 20px;
+  height: 140px;
+  padding: 0 70px;
+}
+
+#footer .subscribe-section h3,
+#footer .subscribe-section p {
+  margin: 0;
+}
+
+#footer .subscribe-section h3 {
+  color: var(--blue);
+}
+
+#footer .subscribe-section p {
+  font-size: 0.875rem;
+}
+
+#footer .subscribe-section .input-group {
+  width: 350px;
+  height: 63px;
+}
+
+#footer .subscribe-section .input-group .form-control {
+  border-radius: 20px 0 0 20px;
+}
+
+#footer .subscribe-section .input-group button {
+  border-radius: 0 20px 20px 0;
+}
+
+#footer .subscribe-section .input-group input::placeholder,
+#footer .subscribe-section .input-group .form-control,
+#footer .subscribe-section .input-group button {
+  border: transparent;
+  background-color: var(--orange);
+  color: white;
+}
+
+#footer .subscribe-section a svg {
+  font-size: 3rem;
+  color: var(--orange);
 }

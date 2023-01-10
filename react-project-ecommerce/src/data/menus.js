@@ -461,3 +461,36 @@ export const latestnews = [
     ],
   },
 ];
+
+export const footerdata = [
+  {
+    sectionName: "Find product",
+    subSection: [
+      "Brownze arnold",
+      "Chronograph blue",
+      "Smart phones",
+      "Automatic watch",
+      "Hair straighteners",
+    ],
+  },
+  {
+    sectionName: "Get help",
+    subSection: [
+      "Brownze arnold",
+      "Chronograph blue",
+      "Smart phones",
+      "Automatic watch",
+      "Hair straighteners",
+    ],
+  },
+  {
+    sectionName: "Find product",
+    subSection: [
+      "Brownze arnold",
+      "Chronograph blue",
+      "Smart phones",
+      "Automatic watch",
+      "Hair straighteners",
+    ],
+  },
+];
