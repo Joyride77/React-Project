@@ -6,18 +6,23 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import Call from '@mui/icons-material/Call';
 import logoBlue from '../images/hero/logoBlue.svg'
+import googleLogo from '../images/logo/googleLogo.svg'
+import facebookLogo from '../images/logo/facebookLogo.svg'
+import whatsappLogo from '../images/logo/whatsappLogo.svg'
 
 const Footer = () => {
     const foot = footerdata.map(data => {
         const paragraphs = data.subSection.map(d => {
             return (
-                <p>{d}</p>
+                <ul>
+                    <li>{d}</li>
+                </ul>
             )
         })
         return (
-            <div className="row">
+            <div className="row footer-shortcut-section">
                 <div className="col">
-                    <h6>{data.sectionName}</h6>
+                    <h6 className='fw-semibold ms-2'>{data.sectionName}</h6>
                     {paragraphs}
 
                 </div>
@@ -54,26 +59,26 @@ const Footer = () => {
                 </div>
             </div>
             <div className="row">
-                <div className="col">
-                    <img src={logoBlue} alt="logo" />
-                    <p>64 st james boulevard hoswick , ze2 7zj</p>
+                <div className="col-3">
+                    <img className='mb-5' src={logoBlue} alt="logo" />
+                    <p className='col-10 mb-4'>64 st james boulevard hoswick , ze2 7zj</p>
                     <hr />
 
                     <div className="row">
-                        <div className="col">
-                            <img src="" alt="" />
+                        <div className="col-3">
+                            <img src={googleLogo} alt="google" />
                         </div>
-                        <div className="col">
-                            <img src="" alt="" />
+                        <div className="col-3">
+                            <img src={facebookLogo} alt="facebook" />
                         </div>
-                        <div className="col">
-                            <img src="" alt="" />
+                        <div className="col-3">
+                            <img src={whatsappLogo} alt="whatsapp" />
                         </div>
 
                     </div>
                 </div>
                 <div className="col">
-                    <div>{foot}</div>
+                    <div className='footer-shortcut-section'>{foot}</div>
                 </div>
             </div>
 

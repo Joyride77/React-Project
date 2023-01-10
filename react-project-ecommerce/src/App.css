@@ -433,3 +433,14 @@ p {
   font-size: 3rem;
   color: var(--orange);
 }
+
+#footer .footer-shortcut-section {
+  display: flex;
+  justify-content: space-between;
+  color: var(--textBlue);
+}
+
+#footer .footer-shortcut-section li::marker {
+  color: var(--greyborder);
+  font-size: 1.5rem;
+}
