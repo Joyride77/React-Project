@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import AliceCarousel from 'react-alice-carousel'
 import { popularData } from '../data/menus'
 // import * as React from 'react';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import StarIcon from '@mui/icons-material/Star';
+import Example from '../Example'
 
-const PopularProduct = () => {
+const PopularProduct = (props) => {
+    const handleClose = () => props.setShow(!props.show);
+    const handleShow = () => props.setShow(!props.show);
     const popular = popularData.map(populardata => {
         return (
             <div id='card'>
                 {populardata.page.map(data => {
-                    const value = 3.5;
+
                     return (
-                        <div className="row popular-product p-2">
+                        <div className="row popular-product p-2" onClick={handleShow}>
                             <div className="row product-image">
                                 <div className="col">
                                     <img src={data.img} alt={data.id} />
@@ -36,7 +41,15 @@ const PopularProduct = () => {
                                 </div>
 
                             </div>
+                            <div>
+                                <Button variant="primary" onClick={handleShow}>
+                                    Launch demo modal
+                                </Button>
 
+                                <Modal show={props.show} onHide={handleClose}>
+                                    <Example />
+                                </Modal>
+                            </div>
                         </div>
                     )
                 })}
