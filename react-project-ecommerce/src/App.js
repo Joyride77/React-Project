@@ -18,8 +18,7 @@ import {
 } from "./components";
 
 function App() {
-  const [show, setShow] = useState(false);
-
+  // const [show, setShow] = useState(false);
   return (
     <div className="container-fluid px-0">
       <div className="container">
@@ -49,7 +48,10 @@ function App() {
       </div>
 
       <div id="popular-product" className="container">
-        <PopularProduct show={show} setShow={setShow} />
+        <PopularProduct
+        // show={show}
+        // setShow={setShow}
+        />
       </div>
 
       <div id="ads-section" className="container my-5">
