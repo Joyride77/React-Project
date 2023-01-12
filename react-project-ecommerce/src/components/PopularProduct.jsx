@@ -46,12 +46,12 @@ const PopularProduct = (props) => {
                         <div className="row popular-product p-2">
                             <div className="row product-image">
                                 <div className="col">
-                                    <img src={data.img} alt={data.id} />
+                                    <img src={data.img} alt={data.alt} />
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <h6>{data.id}</h6>
+                                    <h6>{data.alt}</h6>
                                 </div>
                             </div>
                             <div className="row">
@@ -62,7 +62,7 @@ const PopularProduct = (props) => {
                                     </Stack>
                                 </div>
                                 <div className="col d-flex justify-content-end">
-                                    <img className='shoppy' src={data.shop} alt={data.id} onClick={handleOpen} pointer />
+                                    <img className='shoppy' src={data.shop} alt="shop" onClick={handleOpen} pointer />
                                 </div>
 
                             </div>
@@ -75,12 +75,12 @@ const PopularProduct = (props) => {
                                     <Box sx={style}>
                                         <div className="row product-image">
                                             <div className="col">
-                                                <img src={data.img} alt={data.id} />
+                                                <img src={data.img} alt={data.alt} />
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col">
-                                                <h6>{data.id}</h6>
+                                                <h6>{data.alt}</h6>
                                             </div>
                                         </div>
                                         <div className="row">
@@ -91,7 +91,7 @@ const PopularProduct = (props) => {
                                                 </Stack>
                                             </div>
                                             <div className="col d-flex justify-content-end">
-                                                <img className='shoppy' src={data.shop} alt={data.id} />
+                                                <img className='shoppy' src={data.shop} alt={data.alt} />
                                             </div>
 
                                         </div>
