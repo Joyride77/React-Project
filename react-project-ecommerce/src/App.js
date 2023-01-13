@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import { popularData } from "./data/menus";
 
 import {
   Contact,
@@ -19,6 +20,43 @@ import {
 
 function App() {
   // const [show, setShow] = useState(false);
+
+  const [wishCounter, setWishCounter] = useState(0);
+  const [addWishList, setAddWishList] = useState([]);
+  const [popularDataList, setPopularDataList] = useState(popularData);
+
+  function handleWishlist(productId) {
+    // console.log(productId);
+    let p = [];
+    setWishCounter(wishCounter + 1);
+
+    const newPopularDataList = popularDataList.filter((product) => {
+      // console.log(product);
+      const foundProduct = product.page.filter((page) => {
+        // console.log("Hi", page);
+        if (page.id == productId) {
+          return page;
+        }
+      });
+      console.log("found", foundProduct);
+      if (foundProduct.length > 0) {
+        p = foundProduct;
+        return foundProduct;
+      }
+      // if (product.page.id == productId) {
+      //   console.log("HI");
+      //   // console.log("1", product.id);
+      //   // console.log("2", productId);
+      // }
+    });
+    console.log("p", p);
+    setAddWishList([...addWishList, p]);
+    console.log(addWishList);
+    // setPopularDataList("");
+
+    // console.log(popularDataList[0].page[0].id);
+  }
+
   return (
     <div className="container-fluid px-0">
       <div className="container">
@@ -27,7 +65,7 @@ function App() {
 
       <div id="sign-in" className="container-fluid px-0">
         <div className="container">
-          <SignIn />
+          <SignIn wishCounter={wishCounter} addWishList={addWishList} />
         </div>
       </div>
 
@@ -49,8 +87,10 @@ function App() {
 
       <div id="popular-product" className="container">
         <PopularProduct
-        // show={show}
-        // setShow={setShow}
+          // show={show}
+          // setShow={setShow}
+          handleWishlist={handleWishlist}
+          // id={id}
         />
       </div>
 
