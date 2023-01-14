@@ -27,7 +27,7 @@ function App() {
 
   function handleWishlist(productId) {
     // console.log(productId);
-    let p = [];
+    let p = ["hi"];
     setWishCounter(wishCounter + 1);
 
     const newPopularDataList = popularDataList.filter((product) => {
@@ -51,7 +51,7 @@ function App() {
     });
     console.log("p", p);
     setAddWishList([...addWishList, p]);
-    console.log(addWishList);
+    console.log("ADDWISH", addWishList[0][0].id);
     // setPopularDataList("");
 
     // console.log(popularDataList[0].page[0].id);
