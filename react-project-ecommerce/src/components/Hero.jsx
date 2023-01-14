@@ -4,9 +4,9 @@ import AliceCarousel from "react-alice-carousel";
 import Button from 'react-bootstrap/Button';
 
 const Hero = () => {
-    const hero = heroInfo.map(data => {
+    const hero = heroInfo.map((data, index) => {
         return (
-            <div className='row'>
+            <div key={index} className='row'>
                 <div className="col hero-content d-flex flex-column">
                     <div className='w-25 mb-3'>
                         <h1>{data.title}</h1>

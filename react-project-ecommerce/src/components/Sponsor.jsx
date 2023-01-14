@@ -5,10 +5,11 @@ const Sponsor = () => {
 
     return (
         <div className='gap-4'>
-            {sponsors.map((social) => (
+            {sponsors.map((social, index) => (
                 <img
                     src={social.img}
                     alt={social.id}
+                    key={index}
                 />
             ))}
         </div>

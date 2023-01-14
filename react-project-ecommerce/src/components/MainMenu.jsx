@@ -6,15 +6,15 @@ import SubCatagories from './SubCatagories';
 
 const MainMenu = () => {
 
-    const SubMenus = menus.map(subMenu => {
+    const SubMenus = menus.map((menu, index) => {
         return (
-            <SubMenu title={subMenu.title} position={subMenu.position} children={subMenu.children} />
+            <SubMenu key={index} title={menu.title} position={menu.position} children={menu.children} />
         )
     })
 
-    const SubCatagory = catagories.map(SubCatagory => {
+    const SubCatagory = catagories.map((catagory, index) => {
         return (
-            <SubCatagories title={SubCatagory.title} position={SubCatagory.position} children={SubCatagory.children} />
+            <SubCatagories key={index} title={catagory.title} position={catagory.position} children={catagory.children} />
         )
     })
 

@@ -3,12 +3,12 @@ import { members } from '../data/menus'
 import AliceCarousel from 'react-alice-carousel'
 
 const Members = () => {
-    const member = members.map(membersData => {
+    const member = members.map((membersData, index) => {
         return (
-            <div id="card">
-                {membersData.page.map(data => {
+            <div id="card" key={index}>
+                {membersData.page.map((data, idx) => {
                     return (
-                        <div className='row members p-3 d-flex align-items-center justify-content-center'>
+                        <div key={`${index}${idx}`} className='row members p-3 d-flex align-items-center justify-content-center'>
                             <div className="row d-flex align-items-center justify-content-center mb-3 p-0">
                                 <div className="col-5 d-flex align-items-center justify-content-center">
                                     <img src={data.img} alt={data.name} />
