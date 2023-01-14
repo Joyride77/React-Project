@@ -40,7 +40,22 @@ const SignIn = (props) => {
                         <p className='wishlist-counter counter-style'>{props.wishCounter}</p>
                         {show ? <div className='wishlist-sub-cat'>
                             <h5>Wishlist</h5>
-                            {props.addWishList.length}
+                            {props.addWishList.map(row => {
+                                return row.map(col => {
+                                    return (
+                                        <div className="row d-flex align-items-center">
+                                            <div className="col wishlist-img-section">
+                                                <img className='wishlist-img' src={col.img} alt={col.alt} />
+                                            </div>
+                                            <div className="col text-start">
+                                                <h5>{col.alt}</h5>
+                                                <p>{col.price}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            })
+                            }
                             <button className='close-button' onClick={() => { setShow(false) }}>Close</button>
                         </div> : ""}
                     </div>
