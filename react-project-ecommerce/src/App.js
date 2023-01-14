@@ -26,14 +26,14 @@ function App() {
   const [popularDataList, setPopularDataList] = useState(popularData);
 
   function handleWishlist(productId) {
-    // console.log(productId);
+    console.log("product ID", productId);
     let p = ["hi"];
     setWishCounter(wishCounter + 1);
 
     const newPopularDataList = popularDataList.filter((product) => {
-      // console.log(product);
+      console.log("product", product);
       const foundProduct = product.page.filter((page) => {
-        // console.log("Hi", page);
+        // console.log("page", page);
         if (page.id == productId) {
           return page;
         }
@@ -51,7 +51,7 @@ function App() {
     });
     console.log("p", p);
     setAddWishList([...addWishList, p]);
-    console.log("ADDWISH", addWishList[0][0].id);
+    console.log("ADDWISH", addWishList);
     // setPopularDataList("");
 
     // console.log(popularDataList[0].page[0].id);

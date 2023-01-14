@@ -3,9 +3,9 @@ import AliceCarousel from 'react-alice-carousel'
 import { heroslider } from '../data/menus'
 
 const HeroSlider = () => {
-    const heroslide = heroslider.map(data => {
+    const heroslide = heroslider.map((data, index) => {
         return (
-            <div id="card">
+            <div id="card" key={index}>
                 <div className='d-flex hero-slider align-items-center justify-content-center'>
                     <div className='slider-item d-flex justify-content-center align-items-center'>
                         <div className="row">

@@ -3,12 +3,12 @@ import { latestnews } from '../data/menus'
 import AliceCarousel from 'react-alice-carousel'
 
 const LatestNews = () => {
-    const latest = latestnews.map(latestnewsData => {
+    const latest = latestnews.map((latestnewsData, index) => {
         return (
-            <div id="card">
-                {latestnewsData.page.map(data => {
+            <div id="card" key={index}>
+                {latestnewsData.page.map((data, idx) => {
                     return (
-                        <div className="row latest-news d-flex align-items-center justify-content-center">
+                        <div key={`${index}${idx}`} className="row latest-news d-flex align-items-center justify-content-center">
                             <div className="row d-flex align-items-center justify-content-center">
                                 <div className="col">
                                     <img src={data.img} alt={data.title} />

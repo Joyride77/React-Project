@@ -11,16 +11,16 @@ import facebookLogo from '../images/logo/facebookLogo.svg'
 import whatsappLogo from '../images/logo/whatsappLogo.svg'
 
 const Footer = () => {
-    const foot = footerdata.map(data => {
-        const paragraphs = data.subSection.map(d => {
+    const foot = footerdata.map((data, index) => {
+        const paragraphs = data.subSection.map((d, idx) => {
             return (
-                <ul>
+                <ul key={idx}>
                     <li>{d}</li>
                 </ul>
             )
         })
         return (
-            <div className="row footer-shortcut-section">
+            <div key={index} className="row footer-shortcut-section">
                 <div className="col">
                     <h6 className='fw-semibold ms-2'>{data.sectionName}</h6>
                     {paragraphs}

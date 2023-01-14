@@ -5,10 +5,21 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { useState } from 'react';
+import CancelIcon from '@mui/icons-material/Cancel';
+import React, { useState } from "react";
 
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
+
+    // console.log('Props', props.addWishList[0][0].id)
+    // console.log("hha", props.addWishList.multiFilter(row => row.id !== id));
+
+    function removeWishlist(id) {
+        console.log("id", id)
+        // props.setAddWishList(props.AddWishList.filter(row => row.id !== id))
+        // props.AddWishList.filter(row => { row.filter(col => col.id !== id) })
+
+    }
     return (
         <div className='row d-flex align-items-center justify-content-between p-3'>
             <div className="col">
@@ -40,20 +51,23 @@ const SignIn = (props) => {
                         <p className='wishlist-counter counter-style'>{props.wishCounter}</p>
                         {show ? <div className='wishlist-sub-cat'>
                             <h5>Wishlist</h5>
-                            {props.addWishList.map(row => {
-                                return row.map(col => {
-                                    return (
-                                        <div className="row d-flex align-items-center">
-                                            <div className="col wishlist-img-section">
-                                                <img className='wishlist-img' src={col.img} alt={col.alt} />
-                                            </div>
-                                            <div className="col text-start">
-                                                <h5>{col.alt}</h5>
-                                                <p>{col.price}</p>
-                                            </div>
+                            {props.addWishList.map((col, index) => {
+
+                                return (
+                                    <div key={index} className="row d-flex align-items-center">
+                                        <div className="col wishlist-img-section">
+                                            <img className='wishlist-img' src={col.img} alt={col.alt} />
                                         </div>
-                                    )
-                                })
+                                        <div className="col text-start">
+                                            <h5>{col.alt}</h5>
+                                            <p>{col.price}</p>
+                                        </div>
+                                        <div className="col-2">
+                                            <a onClick={() => removeWishlist(col.id)}><CancelIcon /></a>
+                                        </div>
+                                    </div>
+                                )
+
                             })
                             }
                             <button className='close-button' onClick={() => { setShow(false) }}>Close</button>
