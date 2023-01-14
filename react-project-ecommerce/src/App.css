@@ -26,6 +26,73 @@ p {
   color: var(--light);
 }
 
+/* #sign-in .MuiSvgIcon-root:hover {
+  color: var(--orange);
+} */
+
+#sign-in .wishlist-heart {
+  position: relative;
+  cursor: pointer;
+}
+
+#sign-in .wishlist-heart .MuiSvgIcon-root:hover {
+  color: var(--orange);
+}
+
+#sign-in .wishlist-counter {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#sign-in .shop-cart {
+  position: relative;
+  cursor: pointer;
+}
+
+#sign-in .shop-cart:hover {
+  color: var(--orange);
+}
+
+#sign-in .shop-counter {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#sign-in .counter-style {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+#sign-in .wishlist-heart .wishlist-sub-cat {
+  position: absolute;
+  left: -4rem;
+  top: 3.4rem;
+  background-color: white;
+  /* width: 200px; */
+  color: black;
+  box-shadow: 2px 2px 2px black;
+  z-index: 1;
+  padding: 1rem;
+}
+
+#sign-in .wishlist-heart .wishlist-sub-cat .close-button {
+  width: 130px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  padding: 10px;
+  font-weight: 500;
+  background-color: var(--orange);
+  color: white;
+  border-color: transparent;
+}
+
 #search-hero button {
   background-color: var(--orange);
   border: none;
@@ -242,18 +309,35 @@ p {
   align-items: center;
 }
 
-#popular-product .product-image {
+#popular-product .product-image .pop-img-section {
+  width: 240px;
   height: 120px;
+  position: relative;
 }
 
-#popular-product img {
-  width: 190px;
-  height: 120px;
+#popular-product .product-image .pop-img-section .pop-img {
+  width: 100%;
+  height: 100%;
+}
+
+#popular-product .product-image .pop-img-section .wishlist-icon {
+  background-color: #b3d4e5;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  cursor: pointer;
+}
+
+#popular-product .product-image .pop-img-section .wishlist-icon:active {
+  background-color: var(--ocean);
+  color: white;
 }
 
 #popular-product .shoppy {
   width: 35px;
   height: 35px;
+  cursor: pointer;
 }
 
 #popular-product h6 {

@@ -8,6 +8,7 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import StarIcon from '@mui/icons-material/Star';
 import Example from '../Example'
+import heart from "../images/logo/heart.svg"
 
 // MUI
 import * as React from 'react';
@@ -15,6 +16,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 const style = {
     position: 'absolute',
@@ -30,7 +32,7 @@ const style = {
 
 const PopularProduct = (props) => {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => (setOpen(true))
     const handleClose = () => setOpen(false);
 
     ///Bootstrap MODAL
@@ -41,12 +43,12 @@ const PopularProduct = (props) => {
         return (
             <div id='card'>
                 {populardata.page.map(data => {
-
                     return (
                         <div className="row popular-product p-2">
                             <div className="row product-image">
-                                <div className="col">
-                                    <img src={data.img} alt={data.alt} />
+                                <div className="col pop-img-section">
+                                    <img className='pop-img' src={data.img} alt={data.alt} />
+                                    <img className='wishlist-icon' onClick={() => props.handleWishlist(data.id)} src={heart} alt="heart" />
                                 </div>
                             </div>
                             <div className="row">
