@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import logo from '../images/hero/logo.svg'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,20 +7,21 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CancelIcon from '@mui/icons-material/Cancel';
-import React, { useState } from "react";
+
 
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
+    const [filteredList, setFilteredList] = useState([])
 
-    // console.log('Props', props.addWishList[0][0].id)
-    // console.log("hha", props.addWishList.multiFilter(row => row.id !== id));
-
-    function removeWishlist(id) {
-        console.log("id", id)
-        // props.setAddWishList(props.AddWishList.filter(row => row.id !== id))
-        // props.AddWishList.filter(row => { row.filter(col => col.id !== id) })
-
+    const removeWishlist = (id) => {
+        console.log("remove id: ", id)
+        const removedItem = props.addWishList.find((item) => item.id === id);
+        setFilteredList([...filteredList, removedItem])
+        console.log(filteredList);
     }
+
+    const wishList = props.addWishList.filter(a => !filteredList.some(b => a.id === b.id))
+
     return (
         <div className='row d-flex align-items-center justify-content-between p-3'>
             <div className="col">
@@ -51,8 +53,7 @@ const SignIn = (props) => {
                         <p className='wishlist-counter counter-style'>{props.wishCounter}</p>
                         {show ? <div className='wishlist-sub-cat'>
                             <h5>Wishlist</h5>
-                            {props.addWishList.map((col, index) => {
-
+                            {wishList.map((col, index) => {
                                 return (
                                     <div key={index} className="row d-flex align-items-center">
                                         <div className="col wishlist-img-section">
@@ -67,7 +68,6 @@ const SignIn = (props) => {
                                         </div>
                                     </div>
                                 )
-
                             })
                             }
                             <button className='close-button' onClick={() => { setShow(false) }}>Close</button>

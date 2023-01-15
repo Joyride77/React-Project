@@ -17,6 +17,7 @@ import {
   LatestNews,
   Footer,
 } from "./components";
+import PopularSlideItem from "./components/PopularSlideItem";
 
 function App() {
   // const [show, setShow] = useState(false);
@@ -27,34 +28,21 @@ function App() {
 
   function handleWishlist(productId) {
     console.log("product ID", productId);
-    let p = ["hi"];
     setWishCounter(wishCounter + 1);
 
-    const newPopularDataList = popularDataList.filter((product) => {
-      console.log("product", product);
-      const foundProduct = product.page.filter((page) => {
-        // console.log("page", page);
-        if (page.id == productId) {
-          return page;
-        }
-      });
-      console.log("found", foundProduct);
-      if (foundProduct.length > 0) {
-        p = foundProduct;
-        return foundProduct;
-      }
-      // if (product.page.id == productId) {
-      //   console.log("HI");
-      //   // console.log("1", product.id);
-      //   // console.log("2", productId);
-      // }
+    const tempPopularData = popularDataList.map((data) => {
+      return data.page;
     });
-    console.log("p", p);
-    setAddWishList([...addWishList, p]);
-    console.log("ADDWISH", addWishList);
-    // setPopularDataList("");
 
-    // console.log(popularDataList[0].page[0].id);
+    const listOfPopularData = tempPopularData.reduce(function (prev, next) {
+      return prev.concat(next);
+    });
+
+    const foundPopularData = listOfPopularData.find(
+      (product) => product.id === productId
+    );
+
+    setAddWishList([...addWishList, foundPopularData]);
   }
 
   return (
