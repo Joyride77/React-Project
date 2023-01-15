@@ -5,15 +5,15 @@ import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined
 const Contact = () => {
     return (
         <div id='contact' className="row d-flex justify-content-between align-items-center">
-            <div className="col-4">
+            <div className="col-6">
                 <p className='mb-0 p-3'>Need help? Call us: (+98) 0234 456 789</p>
             </div>
-            <div className="col-4 text-end">
-                <div className="row">
-                    <div className="col p-2">
+            <div className="col-6 text-end">
+                <div className="row d-flex justify-content-end">
+                    <div className="col-3 p-2">
                         <p className='mb-0'><PlaceOutlinedIcon /> Our store</p>
                     </div>
-                    <div className="col p-2">
+                    <div className="col-5 p-2">
                         <p className='mb-0'><LocalShippingOutlinedIcon /> Track your order</p>
                     </div>
                 </div>

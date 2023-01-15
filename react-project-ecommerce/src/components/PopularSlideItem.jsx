@@ -24,7 +24,7 @@ const PopularSlideItem = (props) => {
         <div className="row popular-product p-2">
             <div className="row product-image">
                 <div className="col pop-img-section">
-                    <img className='pop-img' src={data.img} alt={data.alt} />
+                    <img className='pop-img' src={data.img} alt={data.alt} onClick={handleOpen} />
                     <img className='wishlist-icon' onClick={() => props.handleWishlist(data.id)} src={heart} alt="heart" />
                 </div>
             </div>
@@ -34,14 +34,14 @@ const PopularSlideItem = (props) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col">
+                <div className="col-8">
                     <p>{data.price}</p>
                     <Stack spacing={1}>
                         <Rating name="size-small" defaultValue={2} size="small" />
                     </Stack>
                 </div>
-                <div className="col d-flex justify-content-end">
-                    <img className='shoppy' src={data.shop} alt="shop" onClick={handleOpen} />
+                <div className="col-4 d-flex justify-content-end">
+                    <img className='shoppy' src={data.shop} alt="shop" />
                 </div>
 
             </div>
@@ -70,7 +70,7 @@ const PopularSlideItem = (props) => {
                                 </Stack>
                             </div>
                             <div className="col d-flex justify-content-end">
-                                <img className='shoppy' src={data.shop} alt={data.alt} />
+                                <img className='shoppy my-orange-btn' src={data.shop} alt={data.alt} />
                             </div>
 
                         </div>
