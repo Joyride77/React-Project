@@ -17,31 +17,25 @@ import {
   LatestNews,
   Footer,
 } from "./components";
-import PopularSlideItem from "./components/PopularSlideItem";
 
 function App() {
-  // const [show, setShow] = useState(false);
-
-  const [wishCounter, setWishCounter] = useState(0);
   const [addWishList, setAddWishList] = useState([]);
   const [popularDataList, setPopularDataList] = useState(popularData);
 
+  const tempPopularData = popularDataList.map((data) => {
+    return data.page;
+  });
+
+  const listOfPopularData = tempPopularData.reduce(function (prev, next) {
+    return prev.concat(next);
+  });
+
   function handleWishlist(productId) {
     console.log("product ID", productId);
-    setWishCounter(wishCounter + 1);
-
-    const tempPopularData = popularDataList.map((data) => {
-      return data.page;
-    });
-
-    const listOfPopularData = tempPopularData.reduce(function (prev, next) {
-      return prev.concat(next);
-    });
-
     const foundPopularData = listOfPopularData.find(
       (product) => product.id === productId
     );
-
+    setPopularDataList(popularDataList);
     setAddWishList([...addWishList, foundPopularData]);
   }
 
@@ -53,7 +47,11 @@ function App() {
 
       <div id="sign-in" className="container-fluid px-0">
         <div className="container">
-          <SignIn wishCounter={wishCounter} addWishList={addWishList} />
+          <SignIn
+            addWishList={addWishList}
+            setAddWishList={setAddWishList}
+            listOfPopularData={listOfPopularData}
+          />
         </div>
       </div>
 

@@ -11,16 +11,16 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
-    const [filteredList, setFilteredList] = useState([])
-
-    const removeWishlist = (id) => {
-        console.log("remove id: ", id)
-        const removedItem = props.addWishList.find((item) => item.id === id);
-        setFilteredList([...filteredList, removedItem])
-        console.log(filteredList);
+    // const [filteredList, setFilteredList] = useState([])
+    const removeWishlist = (removeId) => {
+        console.log("remove id: ", removeId)
+        // const removedItem = props.addWishList.find((item) => item.id === id);
+        // setFilteredList([...filteredList, removedItem])
+        // props.addWishList.filter(a => !filteredList.some(b => a.id === b.id))
+        props.setAddWishList(props.addWishList.filter((remove) => remove.id !== removeId));
     }
 
-    const wishList = props.addWishList.filter(a => !filteredList.some(b => a.id === b.id))
+    // console.log('wishList items:', wishList);
 
     return (
         <div className='row d-flex align-items-center justify-content-between p-3'>
@@ -36,7 +36,7 @@ const SignIn = (props) => {
                                 aria-label="Search any things"
                                 aria-describedby="basic-addon2"
                             />
-                            <Button variant="outline-secondary" id="button-addon2">
+                            <Button variant="outline-secondary" id="button-addon2" className="my-orange-btn">
                                 Search
                             </Button>
                         </InputGroup>
@@ -50,10 +50,10 @@ const SignIn = (props) => {
                     </div>
                     <div className="col-3 text-center wishlist-heart">
                         <p className='mb-0' onClick={() => { setShow(true) }}><FavoriteBorderIcon /></p>
-                        <p className='wishlist-counter counter-style'>{props.wishCounter}</p>
+                        <p className='wishlist-counter counter-style'>{props.addWishList.length}</p>
                         {show ? <div className='wishlist-sub-cat'>
                             <h5>Wishlist</h5>
-                            {wishList.map((col, index) => {
+                            {props.addWishList.map((col, index) => {
                                 return (
                                     <div key={index} className="row d-flex align-items-center">
                                         <div className="col wishlist-img-section">
@@ -70,7 +70,7 @@ const SignIn = (props) => {
                                 )
                             })
                             }
-                            <button className='close-button' onClick={() => { setShow(false) }}>Close</button>
+                            <button className='close-button my-orange-btn' onClick={() => { setShow(false) }}>Close</button>
                         </div> : ""}
                     </div>
                     <div className="col-3 text-center shop-cart">

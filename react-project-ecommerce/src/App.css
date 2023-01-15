@@ -21,6 +21,10 @@ p {
   font-size: 1rem;
 }
 
+.my-orange-btn:hover {
+  box-shadow: 0px 0px 20px rgb(255, 145, 0);
+}
+
 #sign-in {
   background-color: var(--blue);
   color: var(--light);
@@ -32,7 +36,6 @@ p {
 
 #sign-in .wishlist-heart {
   position: relative;
-  cursor: pointer;
 }
 
 #sign-in .wishlist-heart .MuiSvgIcon-root:hover {
@@ -92,6 +95,7 @@ p {
   background-color: var(--orange);
   color: white;
   border-color: transparent;
+  transition: all 1s;
 }
 
 #sign-in .wishlist-img-section {
@@ -108,6 +112,7 @@ p {
   background-color: var(--orange);
   border: none;
   color: var(--light);
+  transition: all 1s;
 }
 
 #search-hero .input-group {
@@ -338,6 +343,11 @@ p {
   right: 0;
   top: 0.5rem;
   cursor: pointer;
+  transition: all 1s;
+}
+
+#popular-product .product-image .pop-img-section .wishlist-icon:hover {
+  box-shadow: 0 0 20px var(--blue);
 }
 
 #popular-product .product-image .pop-img-section .wishlist-icon:active {
