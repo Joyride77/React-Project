@@ -1,5 +1,5 @@
 import Contact from "./Contact";
-import SignIn from "./Signin";
+import Signin from "./Signin";
 import MainMenu from "./MainMenu";
 import Hero from "./Hero";
 import Footer from "./Footer";
@@ -14,7 +14,7 @@ import LatestNews from "./LatestNews";
 
 export {
   Contact,
-  SignIn,
+  Signin,
   MainMenu,
   Hero,
   HeroSlider,

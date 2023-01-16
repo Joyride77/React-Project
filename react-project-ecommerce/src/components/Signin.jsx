@@ -8,6 +8,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CancelIcon from '@mui/icons-material/Cancel';
 
+import { Outlet, Link } from 'react-router-dom'
+
 
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
@@ -27,7 +29,9 @@ const SignIn = (props) => {
             <div className="col">
                 <div className="row d-flex align-items-center justify-content-start">
                     <div className="col-3">
-                        <img src={logo} alt="log" />
+                        <Link to={"/"}>
+                            <img src={logo} alt="log" />
+                        </Link>
                     </div>
                     <div id='search-hero' className="col-6">
                         <InputGroup>
@@ -46,7 +50,10 @@ const SignIn = (props) => {
             <div className="col-3">
                 <div className="row">
                     <div className="col-6 text-end">
-                        <p className='mb-0 fw-semibold'><PersonOutlineOutlinedIcon /> Sign In</p>
+                        <Link to={"/signin"}>
+                            <p className='mb-0 fw-semibold'><PersonOutlineOutlinedIcon /> Sign In</p>
+                        </Link>
+                        <Outlet />
                     </div>
                     <div className="col-3 text-center wishlist-heart">
                         <p className='mb-0' onClick={() => { setShow(true) }}><FavoriteBorderIcon /></p>
@@ -64,7 +71,7 @@ const SignIn = (props) => {
                                             <p>{col.price}</p>
                                         </div>
                                         <div className="col-2">
-                                            <a onClick={() => removeWishlist(col.id)}><CancelIcon /></a>
+                                            <p onClick={() => removeWishlist(col.id)}><CancelIcon /></p>
                                         </div>
                                     </div>
                                 )

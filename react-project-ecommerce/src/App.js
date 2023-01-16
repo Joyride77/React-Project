@@ -1,22 +1,11 @@
 import "./App.css";
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { popularData } from "./data/menus";
 
-import {
-  Contact,
-  SignIn,
-  MainMenu,
-  Hero,
-  HeroSlider,
-  PopularProduct,
-  Ads,
-  RecommendedItems,
-  Members,
-  Advantage,
-  Sponsor,
-  LatestNews,
-  Footer,
-} from "./components";
+import SignIn from "./components/signin/SignIn";
+import Home from "./components/Home";
+import { Contact, Footer, MainMenu, Signin } from "./components";
 
 function App() {
   const [addWishList, setAddWishList] = useState([]);
@@ -47,7 +36,7 @@ function App() {
 
       <div id="sign-in" className="container-fluid px-0">
         <div className="container">
-          <SignIn
+          <Signin
             addWishList={addWishList}
             setAddWishList={setAddWishList}
             listOfPopularData={listOfPopularData}
@@ -61,54 +50,10 @@ function App() {
         </div>
       </div>
 
-      <div id="hero" className="container-fluid px-0 mb-5">
-        <div className="container">
-          <Hero />
-        </div>
-      </div>
-
-      <div id="hero-slider" className="container my-5">
-        <HeroSlider />
-      </div>
-
-      <div id="popular-product" className="container">
-        <PopularProduct
-          // show={show}
-          // setShow={setShow}
-          handleWishlist={handleWishlist}
-          // id={id}
-        />
-      </div>
-
-      <div id="ads-section" className="container my-5">
-        <Ads />
-      </div>
-
-      <div id="recommended-items" className="container">
-        <RecommendedItems />
-      </div>
-
-      <div
-        id="advantage"
-        className="container d-flex justify-content-center align-items-center my-5"
-      >
-        <Advantage />
-      </div>
-
-      <div id="members" className="container px-0 my-5">
-        <Members />
-      </div>
-
-      <div
-        id="sponsor"
-        className="container d-flex justify-content-center align-items-center my-5"
-      >
-        <Sponsor />
-      </div>
-
-      <div id="latest-news" className="container my-5 px-0">
-        <LatestNews />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home handleWishlist={handleWishlist} />} />
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
 
       <div id="footer" className="container-fluid px-0">
         <div className="container">
