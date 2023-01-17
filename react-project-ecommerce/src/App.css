@@ -337,21 +337,32 @@ p {
   height: 100%;
 }
 
-#popular-product .product-image .pop-img-section .wishlist-icon {
+#popular-product .product-image .pop-img-section .wishlist-icon-hole {
+  color: #292d32;
+}
+#popular-product .product-image .pop-img-section .wishlist-icon-filled {
+  color: crimson;
+}
+#popular-product .product-image .pop-img-section .wishlist-icon-filled,
+#popular-product .product-image .pop-img-section .wishlist-icon-hole {
   background-color: #b3d4e5;
   border-radius: 50%;
+  padding: 3.5px;
   position: absolute;
-  right: 0;
+  right: 0.3rem;
   top: 0.5rem;
   cursor: pointer;
   transition: all 0.5s;
+  box-shadow: 0 0 10px #b3d4e5;
 }
 
-#popular-product .product-image .pop-img-section .wishlist-icon:hover {
+#popular-product .product-image .pop-img-section .wishlist-icon-hole:hover,
+#popular-product .product-image .pop-img-section .wishlist-icon-filled:hover {
   box-shadow: 0 0 20px var(--blue);
 }
 
-#popular-product .product-image .pop-img-section .wishlist-icon:active {
+#popular-product .product-image .pop-img-section .wishlist-icon-hole:active,
+#popular-product .product-image .pop-img-section .wishlist-icon-filled:active {
   background-color: var(--ocean);
   color: white;
 }

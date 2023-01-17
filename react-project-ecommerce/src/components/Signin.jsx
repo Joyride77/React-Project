@@ -13,17 +13,13 @@ import { Outlet, Link } from 'react-router-dom'
 
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
-    // const [filteredList, setFilteredList] = useState([])
+    console.log("addWishList", props.addWishList);
     const removeWishlist = (removeId) => {
         console.log("remove id: ", removeId)
-        // const removedItem = props.addWishList.find((item) => item.id === id);
-        // setFilteredList([...filteredList, removedItem])
-        // props.addWishList.filter(a => !filteredList.some(b => a.id === b.id))
-        props.setAddWishList(props.addWishList.filter((remove) => remove.id !== removeId));
+        props.setAddWishList(props.addWishList.filter(w => w.productId != removeId));
     }
 
     // console.log('wishList items:', wishList);
-
     return (
         <div className='row d-flex align-items-center justify-content-between p-3'>
             <div className="col">
@@ -60,18 +56,20 @@ const SignIn = (props) => {
                         <p className='wishlist-counter counter-style'>{props.addWishList.length}</p>
                         {show ? <div className='wishlist-sub-cat'>
                             <h5>Wishlist</h5>
-                            {props.addWishList.map((col, index) => {
+                            {props.addWishList.map((w, index) => {
                                 return (
                                     <div key={index} className="row d-flex align-items-center">
+
+
                                         <div className="col wishlist-img-section">
-                                            <img className='wishlist-img' src={col.img} alt={col.alt} />
+                                            <img className='wishlist-img' src={w.productImage} alt={w.productName} />
                                         </div>
                                         <div className="col text-start">
-                                            <h5>{col.alt}</h5>
-                                            <p>{col.price}</p>
+                                            <h5>{w.productName}</h5>
+                                            <p>{w.productPrice}</p>
                                         </div>
                                         <div className="col-2">
-                                            <p onClick={() => removeWishlist(col.id)}><CancelIcon /></p>
+                                            <p onClick={() => removeWishlist(w.productId)}><CancelIcon /></p>
                                         </div>
                                     </div>
                                 )

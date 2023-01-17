@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 function App() {
   const [addWishList, setAddWishList] = useState([]);
   const [popularDataList, setPopularDataList] = useState(popularData);
+  const [like, setLike] = useState(false);
 
   const tempPopularData = popularDataList.map((data) => {
     return data.page;
@@ -19,25 +20,25 @@ function App() {
     return prev.concat(next);
   });
 
-  function handleWishlist(productId) {
-    console.log("product ID", productId);
-    const foundPopularData = listOfPopularData.find(
-      (product) => product.id === productId
-    );
-    toast.success("Successfully added", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+  // function handleWishlist(productId) {
+  //   console.log("product ID", productId);
+  //   const foundPopularData = listOfPopularData.find(
+  //     (product) => product.id === productId
+  //   );
 
-    setPopularDataList(popularDataList);
-    setAddWishList([...addWishList, foundPopularData]);
-  }
+  //   setPopularDataList(popularDataList);
+  //   setAddWishList([...addWishList, foundPopularData]);
+  //   // toast.success("Successfully added", {
+  //   //   position: "top-right",
+  //   //   autoClose: 2000,
+  //   //   hideProgressBar: false,
+  //   //   closeOnClick: true,
+  //   //   pauseOnHover: true,
+  //   //   draggable: true,
+  //   //   progress: undefined,
+  //   //   theme: "light",
+  //   // });
+  // }
 
   return (
     <div className="container-fluid px-0">
@@ -49,7 +50,6 @@ function App() {
         <div className="container">
           <Signin
             addWishList={addWishList}
-            setAddWishList={setAddWishList}
             listOfPopularData={listOfPopularData}
           />
         </div>
@@ -62,7 +62,16 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<Home handleWishlist={handleWishlist} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              addWishList={addWishList}
+              setAddWishList={setAddWishList}
+              listOfPopularData={listOfPopularData}
+            />
+          }
+        />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
 
