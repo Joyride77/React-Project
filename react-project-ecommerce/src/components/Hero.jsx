@@ -19,7 +19,7 @@ const Hero = () => {
                 </div>
                 <div className="col hero-image-content d-flex justify-content-center align-items-center">
                     <img className='hero-img' src={data.img} alt={data.id} />
-                    <Button className='price-btn'>{data.price}</Button>{' '}
+                    <Button className='price-btn my-orange-btn'>{data.price}</Button>{' '}
                 </div>
 
 

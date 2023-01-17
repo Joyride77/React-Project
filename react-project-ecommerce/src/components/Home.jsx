@@ -1,6 +1,7 @@
 import "../App.css";
-import React, { useState } from "react";
-import { popularData } from "../data/menus";
+import React from "react";
+import { ToastContainer } from "react-toastify";
+// import { popularData } from "../data/menus";
 import {
     Hero,
     HeroSlider,
@@ -11,7 +12,6 @@ import {
     Advantage,
     Sponsor,
     LatestNews,
-    Footer,
 } from "./";
 
 const Home = (props) => {
@@ -85,6 +85,19 @@ const Home = (props) => {
             <div id="latest-news" className="container my-5 px-0">
                 <LatestNews />
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+            <ToastContainer />
         </div>
     )
 }
