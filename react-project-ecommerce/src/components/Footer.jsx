@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className="col-3">
                     <div className="row d-flex align-items-center justify-content-center">
                         <div className="col d-flex align-items-center justify-content-center">
-                            <a href="#"><Call /></a>
+                            <p><Call /></p>
                         </div>
                         <div className="col-8 fw-semibold d-flex align-items-center justify-content-center">
                             <p>Call us 24/7 : (+62) 0123 567 789</p>

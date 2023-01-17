@@ -86,7 +86,8 @@ p {
   width: 400px;
 }
 
-#sign-in .wishlist-heart .wishlist-sub-cat .close-button {
+#sign-in .wishlist-heart .wishlist-sub-cat .close-button,
+#signin-form .signin {
   width: 130px;
   border-radius: 20px;
   font-size: 0.875rem;
@@ -95,7 +96,7 @@ p {
   background-color: var(--orange);
   color: white;
   border-color: transparent;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 #sign-in .wishlist-img-section {
@@ -112,7 +113,7 @@ p {
   background-color: var(--orange);
   border: none;
   color: var(--light);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 #search-hero .input-group {
@@ -343,7 +344,7 @@ p {
   right: 0;
   top: 0.5rem;
   cursor: pointer;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 #popular-product .product-image .pop-img-section .wishlist-icon:hover {
@@ -356,8 +357,8 @@ p {
 }
 
 #popular-product .shoppy {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
 
@@ -476,11 +477,11 @@ p {
   border: 0.1px solid var(--greyborder);
   border-radius: 20px;
   width: calc((100% / 2) - 20px);
-  height: 300px;
+  /* height: 300px; */
 }
 
 #latest-news img {
-  width: 300px;
+  width: 280px;
 }
 
 #latest-news p,
@@ -497,7 +498,7 @@ p {
   background-color: white;
   border-radius: 20px;
   height: 140px;
-  padding: 0 70px;
+  padding: 0 30px;
 }
 
 #footer .subscribe-section h3,
@@ -534,7 +535,7 @@ p {
   color: white;
 }
 
-#footer .subscribe-section a svg {
+#footer .subscribe-section p svg {
   font-size: 3rem;
   color: var(--orange);
 }
@@ -548,4 +549,23 @@ p {
 #footer .footer-shortcut-section li::marker {
   color: var(--greyborder);
   font-size: 1.5rem;
+}
+
+#signin-form {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+#signin-form label {
+  text-align: start;
+}
+
+#signin-form input {
+  border-radius: 10px;
+  border: 1px solid var(--greyborder);
+  padding-left: 15px;
 }
