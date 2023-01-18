@@ -14,9 +14,11 @@ import { Outlet, Link } from 'react-router-dom'
 const SignIn = (props) => {
     const [show, setShow] = useState(false)
     console.log("addWishList", props.addWishList);
+
     const removeWishlist = (removeId) => {
         console.log("remove id: ", removeId)
-        props.setAddWishList(props.addWishList.filter(w => w.productId != removeId));
+        props.setLike(false)
+        props.setAddWishList(props.addWishList.filter(w => w.productId !== removeId));
     }
 
     // console.log('wishList items:', wishList);

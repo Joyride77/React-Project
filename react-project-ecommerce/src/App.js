@@ -1,24 +1,24 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { popularData } from "./data/menus";
+// import { popularData } from "./data/menus";
 import SignIn from "./components/signin/SignIn";
 import Home from "./components/Home";
 import { Contact, Footer, MainMenu, Signin } from "./components";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 function App() {
   const [addWishList, setAddWishList] = useState([]);
-  const [popularDataList, setPopularDataList] = useState(popularData);
   const [like, setLike] = useState(false);
 
-  const tempPopularData = popularDataList.map((data) => {
-    return data.page;
-  });
+  // const [popularDataList, setPopularDataList] = useState(popularData);
+  // const tempPopularData = popularDataList.map((data) => {
+  //   return data.page;
+  // });
 
-  const listOfPopularData = tempPopularData.reduce(function (prev, next) {
-    return prev.concat(next);
-  });
+  // const listOfPopularData = tempPopularData.reduce(function (prev, next) {
+  //   return prev.concat(next);
+  // });
 
   // function handleWishlist(productId) {
   //   console.log("product ID", productId);
@@ -50,7 +50,10 @@ function App() {
         <div className="container">
           <Signin
             addWishList={addWishList}
-            listOfPopularData={listOfPopularData}
+            // listOfPopularData={listOfPopularData}
+            setAddWishList={setAddWishList}
+            setLike={setLike}
+            like={like}
           />
         </div>
       </div>
@@ -68,7 +71,9 @@ function App() {
             <Home
               addWishList={addWishList}
               setAddWishList={setAddWishList}
-              listOfPopularData={listOfPopularData}
+              // listOfPopularData={listOfPopularData}
+              setLike={setLike}
+              like={like}
             />
           }
         />

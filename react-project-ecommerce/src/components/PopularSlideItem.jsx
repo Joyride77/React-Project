@@ -6,6 +6,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 const PopularSlideItem = (props) => {
     const [like, setLike] = useState(false)
     const { data } = props
+    console.log('heahea', props.addWishList);
+
     return (
         <div className="row popular-product p-2">
             <div className="row product-image">
@@ -18,7 +20,6 @@ const PopularSlideItem = (props) => {
                             productImage: data.img,
                             productName: data.alt,
                             productPrice: data.price,
-                            isLiked: true
                         }
                         props.setAddWishList([...props.addWishList, likedProduct])
                         // console.log("addWishList", props.addWishList)
@@ -26,7 +27,7 @@ const PopularSlideItem = (props) => {
                     }} />
                     {like ? <FavoriteIcon className="wishlist-icon-filled" onClick={() => {
                         setLike(false)
-                        props.setAddWishList(props.addWishList.filter(w => w.productId != data.id))
+                        props.setAddWishList(props.addWishList.filter(w => w.productId !== data.id))
 
                     }} /> : ""}
                 </div>

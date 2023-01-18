@@ -10,7 +10,7 @@ const PopularProduct = (props) => {
             <div id='card' key={index}>
                 {populardata.page.map((data, idx) => {
                     return (
-                        <PopularSlideItem key={`${index}${idx}`} data={data} setAddWishList={props.setAddWishList} addWishList={props.addWishList} />
+                        <PopularSlideItem key={`${index}${idx}`} data={data} setAddWishList={props.setAddWishList} addWishList={props.addWishList} like={props.like} setLike={props.setLike} />
                     )
                 })}
             </div>
