@@ -1,24 +1,30 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-// import { popularData } from "./data/menus";
+import { popularData } from "./data/menus";
 import SignIn from "./components/signin/SignIn";
 import Home from "./components/Home";
-import { Contact, Footer, MainMenu, Signin } from "./components";
+import {
+  Contact,
+  Footer,
+  MainMenu,
+  PopularProduct,
+  Signin,
+} from "./components";
+import PopularSlideItem from "./components/PopularSlideItem";
 // import { toast } from "react-toastify";
 
 function App() {
   const [addWishList, setAddWishList] = useState([]);
-  const [like, setLike] = useState(false);
 
-  // const [popularDataList, setPopularDataList] = useState(popularData);
-  // const tempPopularData = popularDataList.map((data) => {
-  //   return data.page;
-  // });
+  const [popularDataList, setPopularDataList] = useState(popularData);
+  const tempPopularData = popularDataList.map((data) => {
+    return data.page;
+  });
 
-  // const listOfPopularData = tempPopularData.reduce(function (prev, next) {
-  //   return prev.concat(next);
-  // });
+  const listOfPopularData = tempPopularData.reduce(function (prev, next) {
+    return prev.concat(next);
+  });
 
   // function handleWishlist(productId) {
   //   console.log("product ID", productId);
@@ -50,10 +56,8 @@ function App() {
         <div className="container">
           <Signin
             addWishList={addWishList}
-            // listOfPopularData={listOfPopularData}
             setAddWishList={setAddWishList}
-            setLike={setLike}
-            like={like}
+            listOfPopularData={listOfPopularData}
           />
         </div>
       </div>
@@ -71,13 +75,12 @@ function App() {
             <Home
               addWishList={addWishList}
               setAddWishList={setAddWishList}
-              // listOfPopularData={listOfPopularData}
-              setLike={setLike}
-              like={like}
+              listOfPopularData={listOfPopularData}
             />
           }
         />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/product/:id" element={<PopularProduct />} />
       </Routes>
 
       <div id="footer" className="container-fluid px-0">
