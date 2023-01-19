@@ -4,14 +4,20 @@ import { Routes, Route } from "react-router-dom";
 import { popularData } from "./data/menus";
 import SignIn from "./components/signin/SignIn";
 import Home from "./components/Home";
-import { Contact, Footer, MainMenu, Signin } from "./components";
-import { toast } from "react-toastify";
+import {
+  Contact,
+  Footer,
+  MainMenu,
+  PopularProduct,
+  Signin,
+} from "./components";
+import PopularSlideItem from "./components/PopularSlideItem";
+// import { toast } from "react-toastify";
 
 function App() {
   const [addWishList, setAddWishList] = useState([]);
-  const [popularDataList, setPopularDataList] = useState(popularData);
-  const [like, setLike] = useState(false);
 
+  const [popularDataList, setPopularDataList] = useState(popularData);
   const tempPopularData = popularDataList.map((data) => {
     return data.page;
   });
@@ -50,6 +56,7 @@ function App() {
         <div className="container">
           <Signin
             addWishList={addWishList}
+            setAddWishList={setAddWishList}
             listOfPopularData={listOfPopularData}
           />
         </div>
@@ -73,6 +80,7 @@ function App() {
           }
         />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/product/:id" element={<PopularProduct />} />
       </Routes>
 
       <div id="footer" className="container-fluid px-0">
