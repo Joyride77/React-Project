@@ -1,7 +1,6 @@
 import "../App.css";
 import React from "react";
 import { ToastContainer } from "react-toastify";
-// import { popularData } from "../data/menus";
 import {
     Hero,
     HeroSlider,
@@ -15,26 +14,6 @@ import {
 } from "./";
 
 const Home = (props) => {
-    // const [addWishList, setAddWishList] = useState([]);
-    // const [popularDataList, setPopularDataList] = useState(popularData);
-
-    // const tempPopularData = popularDataList.map((data) => {
-    //     return data.page;
-    // });
-
-    // const listOfPopularData = tempPopularData.reduce(function (prev, next) {
-    //     return prev.concat(next);
-    // });
-
-    // function handleWishlist(productId) {
-    //     console.log("product ID", productId);
-    //     const foundPopularData = listOfPopularData.find(
-    //         (product) => product.id === productId
-    //     );
-    //     setPopularDataList(popularDataList);
-    //     setAddWishList([...addWishList, foundPopularData]);
-    // }
-
     return (
         <div className="container-fluid px-0">
             <div id="hero" className="container-fluid px-0 mb-5">
