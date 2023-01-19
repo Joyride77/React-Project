@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import { popularData } from "./data/menus";
-import SignIn from "./components/signin/SignIn";
+import SignIn from "./components/pages/SignIn";
 import Home from "./components/Home";
 import {
   Contact,
@@ -12,6 +12,7 @@ import {
   Signin,
 } from "./components";
 import PopularSlideItem from "./components/PopularSlideItem";
+import ProductDetails from "./components/pages/ProductDetails";
 // import { toast } from "react-toastify";
 
 function App() {
@@ -80,8 +81,12 @@ function App() {
           }
         />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/product/:id" element={<PopularProduct />} />
+        <Route
+          path="/product/:id"
+          element={<ProductDetails listOfPopularData={listOfPopularData} />}
+        />
       </Routes>
+      <Outlet />
 
       <div id="footer" className="container-fluid px-0">
         <div className="container">

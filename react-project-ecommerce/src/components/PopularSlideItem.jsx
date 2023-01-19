@@ -2,32 +2,30 @@ import React from 'react'
 import { Stack, Rating } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useParams } from 'react-router-dom';
-import { popularData } from '../data/menus';
+import { Link, useParams } from 'react-router-dom';
 
 const PopularSlideItem = (props) => {
-    const { id } = useParams();
+    // const { id } = useParams();
     let foundProduct = {};
-
-    if (id) {
-        foundProduct = props.listOfPopularData.filter((product) => {
-            if (product.id == id) {
-                return product;
-            }
-        })[0];
-    }
-    if (Object.keys(props).length > 0) {
+    // if (id) {
+    //     foundProduct = props.listOfPopularData.filter((product) => {
+    //         if (product.id == id) {
+    //             return product;
+    //         }
+    //     })[0];
+    // }
+    if (props.data) {
         foundProduct = props.data;
     }
-    console.log('found', foundProduct);
     const data = foundProduct;
-
     const liked = props.addWishList.filter(wish => wish.productId === data.id)[0];
     return (
         <div className="row popular-product p-2">
             <div className="row product-image">
                 <div className="col pop-img-section">
-                    <img className='pop-img' src={data.img} alt={data.alt} />
+                    <Link to={`/product/${foundProduct.id}`}>
+                        <img className='pop-img' src={data.img} alt={data.alt} />
+                    </Link>
                     <a onClick={() => {
                         if (!liked) {
                             const likedProduct = {

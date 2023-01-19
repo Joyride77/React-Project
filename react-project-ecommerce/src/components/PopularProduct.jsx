@@ -1,6 +1,6 @@
 import AliceCarousel from 'react-alice-carousel'
 import { popularData } from '../data/menus'
-import * as React from 'react';
+// import * as React from 'react';
 import PopularSlideItem from './PopularSlideItem';
 
 
