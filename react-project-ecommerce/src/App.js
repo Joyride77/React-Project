@@ -4,19 +4,15 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { popularData } from "./data/menus";
 import SignIn from "./components/pages/SignIn";
 import Home from "./components/Home";
-import {
-  Contact,
-  Footer,
-  MainMenu,
-  PopularProduct,
-  Signin,
-} from "./components";
+import { Contact, Footer, MainMenu, Signin } from "./components";
 import PopularSlideItem from "./components/PopularSlideItem";
 import ProductDetails from "./components/pages/ProductDetails";
+import Register from "./components/pages/Register";
 // import { toast } from "react-toastify";
 
 function App() {
   const [addWishList, setAddWishList] = useState([]);
+  const [shopList, setShopList] = useState([]);
 
   const [popularDataList, setPopularDataList] = useState(popularData);
   const tempPopularData = popularDataList.map((data) => {
@@ -59,6 +55,8 @@ function App() {
             addWishList={addWishList}
             setAddWishList={setAddWishList}
             listOfPopularData={listOfPopularData}
+            shopList={shopList}
+            setShopList={setShopList}
           />
         </div>
       </div>
@@ -77,10 +75,13 @@ function App() {
               addWishList={addWishList}
               setAddWishList={setAddWishList}
               listOfPopularData={listOfPopularData}
+              shopList={shopList}
+              setShopList={setShopList}
             />
           }
         />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/product/:id"
           element={<ProductDetails listOfPopularData={listOfPopularData} />}

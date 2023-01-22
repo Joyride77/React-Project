@@ -2,23 +2,20 @@ import React from 'react'
 import { Stack, Rating } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const PopularSlideItem = (props) => {
-    // const { id } = useParams();
     let foundProduct = {};
-    // if (id) {
-    //     foundProduct = props.listOfPopularData.filter((product) => {
-    //         if (product.id == id) {
-    //             return product;
-    //         }
-    //     })[0];
-    // }
     if (props.data) {
         foundProduct = props.data;
     }
     const data = foundProduct;
+
     const liked = props.addWishList.filter(wish => wish.productId === data.id)[0];
+    const shopAdded = props.shopList.filter(wish => wish.productId === data.id)[0];
+
     return (
         <div className="row popular-product p-2">
             <div className="row product-image">
@@ -63,7 +60,28 @@ const PopularSlideItem = (props) => {
                     </Stack>
                 </div>
                 <div className="col-4 d-flex justify-content-end px-0">
-                    <img className='shoppy' src={data.shop} alt="shop" />
+                    <a onClick={() => {
+                        if (!shopAdded) {
+                            const addedToShop = {
+                                productId: data.id,
+                                productImage: data.img,
+                                productName: data.alt,
+                                productPrice: data.price,
+                                liked: true,
+                            }
+                            props.setShopList([...props.shopList, addedToShop])
+                        } else {
+                            props.setShopList(
+                                props.shopList.filter(w => w.productId !== data.id)
+                            )
+                        }
+                    }}
+                    >
+                        {shopAdded ?
+                            <ShoppingCartIcon className="shop-icon-filled shop-icon" />
+                            :
+                            <ShoppingCartOutlinedIcon className='shop-icon-hole shop-icon' />}
+                    </a>
                 </div>
 
             </div>
