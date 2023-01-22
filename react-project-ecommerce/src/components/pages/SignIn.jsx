@@ -20,9 +20,9 @@ const SignIn = () => {
         <div id='signin-form-container'>
             <h2>Sign in</h2>
             <form id='signin-form' onSubmit={handleSubmit}>
-                <label for="firstname">Name* </label>
+                <label htmlFor="firstname">Name* </label>
                 <input type="text" name="firstname" placeholder='Enter your name' />
-                <label for="password">Password* </label>
+                <label htmlFor="password">Password* </label>
                 <input type="password" name="password" placeholder='Enter your password' />
                 <button className='signin-register-btn my-orange-btn mt-5' name="signin">Sign In</button>
             </form>

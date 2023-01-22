@@ -8,6 +8,7 @@ import { Contact, Footer, MainMenu, Signin } from "./components";
 import PopularSlideItem from "./components/PopularSlideItem";
 import ProductDetails from "./components/pages/ProductDetails";
 import Register from "./components/pages/Register";
+import ShopDetails from "./components/pages/ShopDetails";
 // import { toast } from "react-toastify";
 
 function App() {
@@ -82,6 +83,12 @@ function App() {
         />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/cart"
+          element={
+            <ShopDetails shopList={shopList} setShopList={setShopList} />
+          }
+        />
         <Route
           path="/product/:id"
           element={<ProductDetails listOfPopularData={listOfPopularData} />}
