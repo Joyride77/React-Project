@@ -4,6 +4,7 @@ import PopularSlideItem from './PopularSlideItem';
 
 
 const PopularProduct = (props) => {
+    console.log('baba', props);
     const popular = popularData.map((populardata, index) => {
         return (
             <div id='card' key={index}>

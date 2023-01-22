@@ -14,6 +14,7 @@ import { Outlet, Link } from 'react-router-dom'
 const SignIn = (props) => {
     const [showWish, setShowWish] = useState(false)
     const [showShop, setShowShop] = useState(false)
+    console.log("shoplist", props.shopList);
     return (
         <div className='row d-flex align-items-center justify-content-between p-3'>
             <div className="col">
@@ -104,6 +105,9 @@ const SignIn = (props) => {
                                 )
                             })
                             }
+                            <Link to={"/cart"} style={{ textDecoration: 'none' }} >
+                                <button className='close-button my-orange-btn'>View Cart</button>
+                            </Link>
                             <button className='close-button my-orange-btn' onClick={() => { setShowShop(false) }}>Close</button>
                         </div> : ""}
                     </div>
