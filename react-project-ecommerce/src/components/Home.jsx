@@ -27,7 +27,7 @@ const Home = (props) => {
             </div>
 
             <div id="popular-product" className="container">
-                <PopularProduct setAddWishList={props.setAddWishList} addWishList={props.addWishList} listOfPopularData={props.listOfPopularData} />
+                <PopularProduct setAddWishList={props.setAddWishList} addWishList={props.addWishList} listOfPopularData={props.listOfPopularData} shopList={props.shopList} setShopList={props.setShopList} />
             </div>
 
             <div id="ads-section" className="container my-5">
