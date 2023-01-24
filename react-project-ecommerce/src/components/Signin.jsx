@@ -106,7 +106,7 @@ const SignIn = (props) => {
                             })
                             }
                             <Link to={"/cart"} style={{ textDecoration: 'none' }} >
-                                <button className='close-button my-orange-btn'>View Cart</button>
+                                <button className='close-button my-orange-btn me-3'>View Cart</button>
                             </Link>
                             <button className='close-button my-orange-btn' onClick={() => { setShowShop(false) }}>Close</button>
                         </div> : ""}
