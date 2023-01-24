@@ -21,7 +21,7 @@ const MainMenu = () => {
     return (
         <div className='row d-flex justify-content-between align-items-center'>
             <div className="col-3">
-                <Navbar className='p-0'>
+                <Navbar className='p-0 my-orange-btn'>
                     {SubCatagory}
                 </Navbar>
             </div>

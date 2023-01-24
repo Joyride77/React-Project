@@ -71,13 +71,13 @@ const ProductDetails = (props) => {
 
                             </div>
                             <div className='d-flex justify-content-center align-items-center my-5'>
-                                <button className='my-review-btn me-4'>Description</button>
-                                <button className='my-description-btn me-4'>Reviews</button>
+                                <button className='my-review-btn me-4 my-grey-btn'>Description</button>
+                                <button className='my-description-btn me-4 my-grey-btn'>Reviews</button>
                             </div>
                             <div className='customer-reviews mb-5'>
                                 <h5>Customer reviews</h5>
                                 <h6>No reviews yet</h6>
-                                <button>Write a review</button>
+                                <button className='my-grey-btn'>Write a review</button>
                             </div>
                         </div>
                     )

@@ -23,6 +23,11 @@ p {
 
 .my-orange-btn:hover {
   box-shadow: 0px 0px 20px rgb(255, 145, 0);
+  transition: all 0.5s;
+}
+.my-grey-btn:hover {
+  box-shadow: 0px 0px 30px var(--greyborder);
+  transition: all 0.5s;
 }
 
 #sign-in {
@@ -81,7 +86,7 @@ p {
   /* width: 200px; */
   color: black;
   box-shadow: 2px 2px 2px black;
-  z-index: 1;
+  z-index: 10;
   padding: 1rem;
   width: 400px;
 }
@@ -192,9 +197,11 @@ p {
 #hero .alice-carousel__dots .__active,
 #popular-product .alice-carousel__dots .__active,
 #members .alice-carousel__dots .__active,
-#latest-news .alice-carousel__dots .__active {
+#latest-news .alice-carousel__dots .__active,
+#cart-list .cart-btn-orange {
   background-color: var(--orange);
   border-color: transparent;
+  color: white;
 }
 
 #hero .alice-carousel__dots li,
@@ -683,4 +690,56 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+#cart-list .cart-img-container {
+  width: 150px;
+  height: 100px;
+}
+
+#cart-list .cart-img {
+  width: 100%;
+  height: 100%;
+}
+
+#cart-list h5 {
+  margin: 0;
+}
+
+#cart-list .my-blue-background {
+  background-color: #e2f4ff;
+  padding: 10px 0;
+}
+
+#cart-list .cart-btn {
+  border-radius: 20px;
+  padding: 10px 25px;
+  transition: all 0.5s;
+}
+
+#cart-list .cart-btn-grey {
+  background-color: transparent;
+  border: 0.1px solid #797979;
+  color: #797979;
+}
+
+#cart-list .cart-btn-red {
+  background-color: transparent;
+  border: 0.1px solid #c33131;
+  color: #c33131;
+}
+
+#cart-list #added-cart-list {
+  position: relative;
+}
+
+#cart-list #added-cart-list .cart-remove-btn {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  color: var(--textBlue);
+}
+
+#cart-list #added-cart-list .cart-remove-btn:hover {
+  color: #c33131;
 }
