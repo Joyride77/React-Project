@@ -13,7 +13,7 @@ const Hero = () => {
                     </div>
                     <div>
                         <Button className='shop-btn me-3 my-orange-btn'>Shop now</Button>{' '}
-                        <Button className='view-btn my-orange-btn'>View more</Button>{' '}
+                        <Button className='view-btn my-grey-btn'>View more</Button>{' '}
 
                     </div>
                 </div>
