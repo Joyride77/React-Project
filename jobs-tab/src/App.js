@@ -1,9 +1,22 @@
-import React from "react"
-import './App.css';
-import { AiFillCaretRight } from "react-icons/ai"
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { AiFillCaretRight } from "react-icons/ai";
 
+const url = "https://course-api.com/react-tabs-project";
 function App() {
-  const url = "https://course-api.com/react-tabs-project";
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    const FETCHED_DATA = await fetch(url);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    setData(FETCHED_JSON);
+  }
+
+  console.log("data", data);
 
   return (
     <section className="container">
@@ -20,15 +33,28 @@ function App() {
           <p className="date">December 2015 - Present</p>
           <div className="text">
             <AiFillCaretRight />
-            <p>Tote bag sartorial mlkshk air plant vinyl banjo lumbersexual poke leggings offal cold-pressed brunch neutra. Hammock photo booth live-edge disrupt.</p>
+            <p>
+              Tote bag sartorial mlkshk air plant vinyl banjo lumbersexual poke
+              leggings offal cold-pressed brunch neutra. Hammock photo booth
+              live-edge disrupt.
+            </p>
           </div>
           <div className="text">
             <AiFillCaretRight />
-            <p>Post-ironic selvage chambray sartorial freegan meditation. Chambray chartreuse kombucha meditation, man bun four dollar toast street art cloud bread live-edge heirloom.</p>
+            <p>
+              Post-ironic selvage chambray sartorial freegan meditation.
+              Chambray chartreuse kombucha meditation, man bun four dollar toast
+              street art cloud bread live-edge heirloom.
+            </p>
           </div>
           <div className="text">
             <AiFillCaretRight />
-            <p>Butcher drinking vinegar franzen authentic messenger bag copper mug food truck taxidermy. Mumblecore lomo echo park readymade iPhone migas single-origin coffee franzen cloud bread tilde vegan flexitarian.</p>
+            <p>
+              Butcher drinking vinegar franzen authentic messenger bag copper
+              mug food truck taxidermy. Mumblecore lomo echo park readymade
+              iPhone migas single-origin coffee franzen cloud bread tilde vegan
+              flexitarian.
+            </p>
           </div>
         </div>
       </div>
