@@ -3,8 +3,10 @@ import "./App.css";
 import { AiFillCaretRight } from "react-icons/ai";
 
 const url = "https://course-api.com/react-tabs-project";
+
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+  const [order, setOrder] = useState(1);
 
   useEffect(() => {
     fetchData();
@@ -16,47 +18,61 @@ function App() {
     setData(FETCHED_JSON);
   }
 
-  console.log("data", data);
-
+  const print = data.map((e, idx) => {
+    if (e.order === order) {
+      return (
+        <div key={idx} className="company-content">
+          <h2 className="job-title">{e.title}</h2>
+          <p className="company-name">{e.company}</p>
+          <p className="date">{e.dates}</p>
+          <div className="text">
+            <AiFillCaretRight />
+            <p>{e.duties[0]}</p>
+          </div>
+          <div className="text">
+            <AiFillCaretRight />
+            <p>{e.duties[1]}</p>
+          </div>
+          <div className="text">
+            <AiFillCaretRight />
+            <p>{e.duties[2]}</p>
+          </div>
+        </div>
+      );
+    }
+  });
+  function handleOrder(e) {
+    console.log(e.target.text);
+    if (e.target.text === "John") {
+      setOrder(1);
+    } else if (e.target.text === "Smith") {
+      setOrder(2);
+    } else if (e.target.text === "Tom") {
+      setOrder(3);
+    }
+  }
   return (
     <section className="container">
       <h1 className="title">Experience</h1>
       <div className="job">
         <div className="company-tab">
-          <h4>John</h4>
-          <h4>Smith</h4>
-          <h4>Tom</h4>
+          <h4>
+            <a className="hover" onClick={handleOrder}>
+              John
+            </a>
+          </h4>
+          <h4>
+            <a className="hover" onClick={handleOrder}>
+              Smith
+            </a>
+          </h4>
+          <h4>
+            <a className="hover" onClick={handleOrder}>
+              Tom
+            </a>
+          </h4>
         </div>
-        <div className="company-content">
-          <h2 className="job-title">Full Stack Web Developer</h2>
-          <p className="company-name">John</p>
-          <p className="date">December 2015 - Present</p>
-          <div className="text">
-            <AiFillCaretRight />
-            <p>
-              Tote bag sartorial mlkshk air plant vinyl banjo lumbersexual poke
-              leggings offal cold-pressed brunch neutra. Hammock photo booth
-              live-edge disrupt.
-            </p>
-          </div>
-          <div className="text">
-            <AiFillCaretRight />
-            <p>
-              Post-ironic selvage chambray sartorial freegan meditation.
-              Chambray chartreuse kombucha meditation, man bun four dollar toast
-              street art cloud bread live-edge heirloom.
-            </p>
-          </div>
-          <div className="text">
-            <AiFillCaretRight />
-            <p>
-              Butcher drinking vinegar franzen authentic messenger bag copper
-              mug food truck taxidermy. Mumblecore lomo echo park readymade
-              iPhone migas single-origin coffee franzen cloud bread tilde vegan
-              flexitarian.
-            </p>
-          </div>
-        </div>
+        <div>{print}</div>
       </div>
     </section>
   );
