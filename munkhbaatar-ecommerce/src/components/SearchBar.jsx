@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function SearchBar(props) {
   const [showWish, setShowWish] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const notifyBasketRemove = (title) => toast.error(title + "-г сагснаас амжилттай устгалаа.! ", {
     icon: <i class="bi bi-trash3"></i>
   });
@@ -46,6 +47,11 @@ export default function SearchBar(props) {
     notifyWishlistRemove(title);
   }
 
+  function handleSearch(e) {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+  }
+
 
   return (
     <div className="searchbar-container">
@@ -65,9 +71,6 @@ export default function SearchBar(props) {
                 aria-label="Search"
                 aria-describedby="search-addon"
               />
-              <button type="button" className="btn btn-warning">
-                search
-              </button>
             </div>
           </div>
 

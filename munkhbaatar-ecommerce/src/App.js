@@ -10,6 +10,7 @@ import SearchBar from "./components/SearchBar";
 import { useState } from "react";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
@@ -43,15 +44,30 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route
             path="/productDetails/:id"
-            element={<ProductDetails
-              wishlist={wishlist}
-              setWishlist={setWishlist}
-              basket={basket}
-              setBasket={setBasket} />}
+            element={
+              <ProductDetails
+                wishlist={wishlist}
+                setWishlist={setWishlist}
+                basket={basket}
+                setBasket={setBasket}
+              />
+            }
           ></Route>
-          <Route path="/cart" element={<Cart
-            basket={basket}
-            setBasket={setBasket} />}></Route>
+          <Route
+            path="/cart"
+            element={<Cart basket={basket} setBasket={setBasket} />}
+          ></Route>
+          <Route
+            path="/search?keyword=:keyword"
+            element={
+              <SearchPage
+                wishlist={wishlist}
+                setWishlist={setWishlist}
+                basket={basket}
+                setBasket={setBasket}
+              />
+            }
+          ></Route>
         </Routes>
       </div>
     </div>

@@ -6,4 +6,10 @@ async function fetchPopularCategory(url, setPopularCategory) {
   return result;
 }
 
-export default fetchPopularCategory;
+async function fetchProducts(url, setProducts) {
+  const result = await axios.get(url);
+  setProducts(result.data);
+  return result;
+}
+
+export { fetchPopularCategory, fetchProducts };
